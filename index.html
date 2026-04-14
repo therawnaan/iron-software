@@ -10,10 +10,9 @@
   <meta property="og:title" content="IronPDF for C++ – Beta Software Program" />
   <meta property="og:description" content="Sign up now to get early access to IronPDF for C++." />
   <title>IronPDF for C++ – Beta Software Program | Iron Software</title>
-
-  <!-- Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <style>
+    /* ── Fonts ── */
     @font-face {
       font-family: 'Gotham';
       src: url('assets/fonts/gotham/Gotham/Gotham Thin/Gotham Thin.otf') format('opentype');
@@ -93,22 +92,16 @@
       font-style: normal;
       font-display: swap;
     }
-  </style>
 
-  <style>
+    /* ── Variables ── */
     :root {
       --nav-bg: #0d0d1a;
       --hero-bg: #2C0F29;
-      --cta-bg: #1a1535;
       --why-bg: #3a1a38;
       --accent-pink: #e8185a;
       --accent-teal: #00b4c8;
-      --text-primary: #ffffff;
-      --text-muted: #a8a8c0;
       --badge-bg: #C6AAC6;
-      --input-bg: #ffffff;
-      --font-main: 'Gotham', sans-serif;
-      --font-cond: 'Gotham', sans-serif;
+      --font: 'Gotham', sans-serif;
     }
 
     *,
@@ -119,9 +112,9 @@
 
     body {
       margin: 0;
-      font-family: var(--font-main);
+      font-family: var(--font);
       background: var(--hero-bg);
-      color: var(--text-primary);
+      color: #fff;
       overflow-x: hidden;
     }
 
@@ -137,46 +130,16 @@
     .site-nav .navbar-brand {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-family: var(--font-cond);
+      font-family: var(--font);
       font-weight: 700;
       font-size: 1rem;
-      color: var(--text-primary);
+      color: #fff;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .brand-icon {
-      width: 20px;
-      height: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
-
-    .brand-icon span {
-      display: block;
-      border-radius: 1px;
-    }
-
-    .brand-icon span:nth-child(1) {
-      background: var(--accent-teal);
-    }
-
-    .brand-icon span:nth-child(2) {
-      background: var(--accent-pink);
-    }
-
-    .brand-icon span:nth-child(3) {
-      background: var(--accent-pink);
-    }
-
-    .brand-icon span:nth-child(4) {
-      background: var(--accent-teal);
-    }
-
     .site-nav .nav-link {
-      color: rgba(255, 255, 255) !important;
+      color: #fff !important;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.06em;
@@ -185,8 +148,7 @@
       transition: color 0.2s;
     }
 
-    .site-nav .nav-link:hover,
-    .site-nav .nav-link:focus {
+    .site-nav .nav-link:hover {
       color: #fff !important;
     }
 
@@ -202,12 +164,32 @@
       filter: invert(1);
     }
 
+    .dropdown-menu {
+      background: var(--nav-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-width: 160px;
+    }
+
+    .dropdown-item {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: #fff;
+    }
+
     /* ── Hero ── */
     .hero {
       background: var(--hero-bg);
       position: relative;
       padding: 3.5rem 0 0;
       min-height: 340px;
+      /* overflow: hidden; */
     }
 
     .hero-ribbons {
@@ -217,12 +199,21 @@
       width: 52%;
       height: 100%;
       pointer-events: none;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
 
     .ribbon {
       position: absolute;
-      transform-origin: center center;
+      transform-origin: center;
+    }
+
+    .ribbon-dark {
+      width: 60px;
+      height: 160%;
+      background: #1e1c3a;
+      top: -20%;
+      right: 28%;
+      transform: rotate(-28deg);
     }
 
     .ribbon-teal {
@@ -242,7 +233,6 @@
       top: -10%;
       right: 14%;
       transform: rotate(-28deg);
-      opacity: 1;
     }
 
     .ribbon-gold {
@@ -253,15 +243,6 @@
       right: 6%;
       transform: rotate(-28deg);
       opacity: 0.85;
-    }
-
-    .ribbon-dark {
-      width: 60px;
-      height: 160%;
-      background: #1e1c3a;
-      top: -20%;
-      right: 28%;
-      transform: rotate(-28deg);
     }
 
     .cpp-icon-wrap {
@@ -284,17 +265,11 @@
       gap: 0.5rem;
       font-size: 0.82rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: #fff;
       margin-bottom: 1rem;
     }
 
-    .hero-product-label .brand-icon {
-      width: 16px;
-      height: 16px;
-    }
-
     .hero-product-label .label-suffix {
-      color: var(--input-bg);
       font-size: 17px;
       font-weight: 300;
     }
@@ -302,23 +277,21 @@
     .hero-eyebrow {
       font-size: 18px;
       font-weight: 700;
-      color: var(--input-bg);
       margin-bottom: 0.5rem;
       letter-spacing: 0.02em;
     }
 
     .hero-title {
-      font-family: var(--font-cond);
-      font-size: clamp(50px, 5vw, 3.2rem);
+      font-family: var(--font);
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 700;
       line-height: 1.05;
-      color: #fff;
       margin-bottom: 0.1rem;
     }
 
     .hero-subtitle {
-      font-family: var(--font-cond);
-      font-size: clamp(50px, 3.5vw, 2.4rem);
+      font-family: var(--font);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       font-weight: 700;
       color: #C6AAC6;
       margin-bottom: 1.5rem;
@@ -334,15 +307,12 @@
     .cta-section {
       background: linear-gradient(to right, #8E608E, #402640, #371A34);
       padding: 2.4rem 0 2rem;
-      position: relative;
-      z-index: 1;
     }
 
     .cta-heading {
-      font-family: var(--font-cond);
-      font-size: clamp(40px, 4vw, 2.4rem);
+      font-family: var(--font);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 900;
-      color: #fff;
       margin-bottom: 0.25rem;
     }
 
@@ -355,7 +325,6 @@
 
     .signup-form {
       display: flex;
-      gap: 0;
       max-width: 420px;
       background: #fff;
       border-radius: 100px;
@@ -371,7 +340,7 @@
       font-size: 14px;
       color: #431F43;
       background: transparent;
-      font-family: var(--font-main);
+      font-family: var(--font);
     }
 
     .signup-form input[type="email"]::placeholder {
@@ -388,20 +357,15 @@
       font-weight: 700;
       cursor: pointer;
       white-space: nowrap;
-      font-family: var(--font-main);
+      font-family: var(--font);
       transition: background 0.2s;
       letter-spacing: 0.02em;
     }
 
-    .signup-form button:hover,
-    .signup-form button:focus {
+    .signup-form button:hover {
       background: #c9124d;
       outline: 2px solid var(--accent-teal);
       outline-offset: 2px;
-    }
-
-    .signup-form button .arrow {
-      margin-left: 3px;
     }
 
     .badge-row {
@@ -411,7 +375,6 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       font-size: 0.78rem;
-      color: var(--text-muted);
     }
 
     .badge-soon {
@@ -428,7 +391,6 @@
     .badge-post-label {
       font-weight: 100;
       font-size: 16px;
-      color: #fff;
     }
 
     .badge-row .lang {
@@ -439,26 +401,6 @@
     .badge-row .sep {
       color: rgba(255, 255, 255, 0.3);
       margin: 0 1px;
-    }
-
-    /* ── Dropdown ── */
-    .dropdown-menu {
-      background: var(--nav-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      min-width: 160px;
-    }
-
-    .dropdown-item {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .dropdown-item:hover {
-      background: rgba(255, 255, 255, 0.07);
-      color: #fff;
     }
 
     /* ── Features ── */
@@ -504,10 +446,8 @@
     }
 
     .features-title {
-      font-family: var(--font-main);
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       font-weight: 700;
-      color: #fff;
       display: inline;
       margin-right: 0.5rem;
     }
@@ -534,7 +474,7 @@
     }
 
     .feature-pill .pill-hash {
-      color: var(--input-bg);
+      color: #fff;
       font-weight: 700;
       font-size: 0.85rem;
     }
@@ -575,10 +515,8 @@
     }
 
     .why-heading {
-      font-family: var(--font-main);
       font-size: clamp(1.6rem, 3.5vw, 2.2rem);
       font-weight: 700;
-      color: #fff;
       margin-bottom: 1.6rem;
     }
 
@@ -594,110 +532,14 @@
       margin-bottom: 1rem;
     }
 
-    .conversion-icons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .file-icon {
-      width: 74px;
-      height: 88px;
-      border-radius: 5px 12px 5px 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      padding-bottom: 10px;
-      position: relative;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .file-icon::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 18px;
-      height: 18px;
-      border-radius: 0 12px 0 5px;
-      border-left: 2px solid rgba(255, 255, 255, 0.15);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .file-icon.html-icon {
-      background: linear-gradient(145deg, #e8830a 60%, #c8620a 100%);
-    }
-
-    .file-icon.html-icon::before {
-      background: #c8620a;
-    }
-
-    .file-icon.pdf-icon {
-      background: linear-gradient(145deg, #c0392b 60%, #96281b 100%);
-    }
-
-    .file-icon.pdf-icon::before {
-      background: #96281b;
-    }
-
-    .file-icon .icon-logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 3px;
-    }
-
-    .file-icon .icon-ext {
-      font-size: 0.62rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.95);
-      letter-spacing: 0.04em;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 1px 5px;
-      border-radius: 3px;
-    }
-
-    .conversion-middle {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cpp-circle {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #0080CD;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.55rem;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: -0.5px;
-    }
-
-    .conv-arrow {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 1.4rem;
-      line-height: 1;
-    }
-
-    /* ── Early Access Section ── */
+    /* ── Early Access ── */
     .early-access-section {
       background: #1e0a1e;
       padding-top: 4rem;
       position: relative;
-      /* needed for blur bg */
       overflow: hidden;
-      /* clip the blur blob */
     }
 
-    /* Blur background blob — mirrors features-blur-bg, positioned top-right */
     .early-access-blur-bg {
       position: absolute;
       top: 10%;
@@ -720,10 +562,8 @@
     }
 
     .early-access-heading {
-      font-family: var(--font-main);
       font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: 700;
-      color: #fff;
       margin-bottom: 1rem;
       position: relative;
       z-index: 1;
@@ -746,7 +586,7 @@
     .product-cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 3rem;
+      gap: 1.5rem;
       margin-bottom: 3.5rem;
       position: relative;
       z-index: 1;
@@ -755,8 +595,10 @@
     .product-card {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
       flex: 1 1 0;
+      min-width: 200px;
       background: rgba(23, 6, 23, 0.60);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 50px;
@@ -764,13 +606,13 @@
     }
 
     .product-card-badge {
-      font-family: var(--font-main);
       font-size: 0.72rem;
       font-weight: 700;
       padding: 0.45rem 1rem;
       border-radius: 50px;
       white-space: nowrap;
       letter-spacing: 0.03em;
+      flex-shrink: 0;
     }
 
     .product-card-badge.released {
@@ -788,11 +630,10 @@
     .product-card-info {
       display: flex;
       gap: 5px;
-      line-height: 1.25;
+      align-items: center;
     }
 
     .product-card-info span {
-      margin: auto;
       color: #C6AAC6;
     }
 
@@ -816,23 +657,18 @@
     .early-access-signup {
       text-align: center;
       padding: 3rem 0 3.5rem;
-
-      /* Full-bleed background */
       margin-left: calc(-50vw + 50%);
       margin-right: calc(-50vw + 50%);
       padding-left: calc(50vw - 50% + 1.5rem);
       padding-right: calc(50vw - 50% + 1.5rem);
-
       background: rgba(23, 6, 23, 0.30);
       position: relative;
       z-index: 1;
     }
 
     .early-access-signup-heading {
-      font-family: var(--font-main);
       font-size: clamp(1.2rem, 2.5vw, 1.6rem);
       font-weight: 700;
-      color: #fff;
       margin-bottom: 1.5rem;
     }
 
@@ -842,10 +678,9 @@
 
     .early-access-form {
       display: flex;
-      gap: 0;
       max-width: 420px;
-      border: 2px solid #fff;
       background: #fff;
+      border: 2px solid #fff;
       border-radius: 100px;
       overflow: hidden;
       margin: 0 auto;
@@ -859,7 +694,7 @@
       font-size: 14px;
       color: #431F43;
       background: transparent;
-      font-family: var(--font-main);
+      font-family: var(--font);
     }
 
     .early-access-form input[type="email"]::placeholder {
@@ -876,13 +711,12 @@
       font-weight: 700;
       cursor: pointer;
       white-space: nowrap;
-      font-family: var(--font-main);
+      font-family: var(--font);
       transition: background 0.2s;
       letter-spacing: 0.02em;
     }
 
-    .early-access-form button:hover,
-    .early-access-form button:focus {
+    .early-access-form button:hover {
       background: #c9124d;
       outline: 2px solid var(--accent-teal);
       outline-offset: 2px;
@@ -890,10 +724,14 @@
 
     /* ── Responsive ── */
     @media (max-width: 991px) {
-      .cpp-icon-wrap {
-        right: 12%;
-        transform: translate(0, -50%);
+
+
+      .hero {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
+
 
       .hero-ribbons {
         width: 45%;
@@ -916,6 +754,11 @@
         margin: 1.5rem 0;
       }
 
+      .cpp-icon-wrap svg {
+        max-width: 100%;
+        height: auto;
+      }
+
       .hero-ribbons {
         width: 100%;
         opacity: 0.35;
@@ -933,6 +776,11 @@
         max-width: 100%;
       }
 
+      .badge-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .feature-pill+.feature-pill {
         border-left: none;
       }
@@ -947,13 +795,18 @@
         flex-direction: column-reverse;
       }
 
-      .conversion-icons {
-        justify-content: center;
-        margin-bottom: 2rem;
+      .why-section .col-md-4 svg {
+        max-width: 100%;
+        height: auto;
       }
 
       .product-cards {
         flex-direction: column;
+        gap: 1rem;
+      }
+
+      .product-card {
+        min-width: unset;
       }
 
       .early-access-form {
@@ -964,37 +817,43 @@
     @media (max-width: 480px) {
       .signup-form {
         flex-direction: column;
-        border-radius: 6px;
+        border-radius: 12px;
       }
 
       .signup-form input[type="email"] {
         border-bottom: 1px solid #eee;
+        padding: 12px 20px;
       }
 
       .signup-form button {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 10px 10px;
         padding: 0.75rem;
         text-align: center;
-      }
-
-      .badge-row {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .early-access-form {
         flex-direction: column;
-        border-radius: 6px;
+        border-radius: 12px;
       }
 
       .early-access-form input[type="email"] {
         border-bottom: 1px solid #eee;
+        padding: 12px 20px;
       }
 
       .early-access-form button {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 10px 10px;
         padding: 0.75rem;
         text-align: center;
+      }
+
+      .product-card {
+        padding: 0.75rem 1rem;
+      }
+
+      .product-card-badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.65rem;
       }
     }
   </style>
@@ -1078,12 +937,12 @@
 
   <!-- ── Hero ── -->
   <section class="hero" aria-label="Hero – IronPDF for C++ Beta">
-    <div class="hero-ribbons" aria-hidden="true">
+    <!-- <div class="hero-ribbons" aria-hidden="true">
       <div class="ribbon ribbon-dark"></div>
       <div class="ribbon ribbon-teal"></div>
       <div class="ribbon ribbon-pink"></div>
       <div class="ribbon ribbon-gold"></div>
-    </div>
+    </div> -->
 
     <div class="cpp-icon-wrap" aria-hidden="true">
       <svg width="780" height="698" viewBox="0 0 780 698" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1240,7 +1099,7 @@
             <label for="emailInput" class="visually-hidden">Enter your email address</label>
             <input type="email" id="emailInput" name="email" placeholder="Enter email adress" autocomplete="email"
               aria-required="true" />
-            <button type="submit" aria-label="Sign up now for early access">Sign up now <span class="arrow"
+            <button type="submit" aria-label="Sign up now for early access">Sign up now <span
                 aria-hidden="true">›</span></button>
           </form>
           <div class="badge-row" aria-label="Also coming soon for other platforms">
@@ -1256,7 +1115,7 @@
     </div>
   </section>
 
-  <!-- ── Features Section ── -->
+  <!-- ── Features ── -->
   <section class="features-section" aria-label="IronPDF for C++ Features">
     <div class="container px-4">
       <div class="features-title-row">
@@ -1305,7 +1164,7 @@
     </div>
   </section>
 
-  <!-- ── Why Section ── -->
+  <!-- ── Why ── -->
   <section class="why-section" aria-label="Why make a C++ PDF Library">
     <div class="container px-4">
       <div class="row align-items-center g-5">
@@ -1391,12 +1250,11 @@
     </div>
   </section>
 
-  <!-- ── Early Access Section ── -->
+  <!-- ── Early Access ── -->
   <section class="early-access-section" aria-label="Early Access to C++ PDF Library">
     <div class="container px-4">
 
       <h2 class="early-access-heading">Early Access to <span>C++ PDF Library</span></h2>
-      <!-- Blur background blob -->
       <div class="early-access-blur-bg" aria-hidden="true"></div>
 
       <p class="early-access-body">
@@ -1443,7 +1301,6 @@
     </div>
   </section>
 
-  <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
