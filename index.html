@@ -103,6 +103,7 @@
       --nav-bg: #0d0d1a;
       --hero-bg: #2C0F29;
       --cta-bg: #1a1535;
+      --why-bg: #3a1a38;
       --accent-pink: #e8185a;
       --accent-teal: #00b4c8;
       --text-primary: #ffffff;
@@ -209,12 +210,10 @@
     .hero {
       background: var(--hero-bg);
       position: relative;
-      /* overflow: hidden; */
       padding: 3.5rem 0 0;
       min-height: 340px;
     }
 
-    /* decorative diagonal ribbons */
     .hero-ribbons {
       position: absolute;
       top: 0;
@@ -269,7 +268,6 @@
       transform: rotate(-28deg);
     }
 
-    /* CPP file icon placeholder */
     .cpp-icon-wrap {
       position: absolute;
       top: 75%;
@@ -328,7 +326,6 @@
       border-radius: 3px;
     }
 
-    /* hero text */
     .hero-content {
       position: relative;
       z-index: 3;
@@ -410,7 +407,6 @@
       margin-bottom: 1.4rem;
     }
 
-    /* email form */
     .signup-form {
       display: flex;
       gap: 0;
@@ -419,7 +415,6 @@
       border-radius: 100px;
       border: 3px solid #C6AAC6;
       overflow: hidden;
-      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
     }
 
     .signup-form input[type="email"] {
@@ -463,7 +458,6 @@
       margin-left: 3px;
     }
 
-    /* coming soon badge row */
     .badge-row {
       margin-top: 1.1rem;
       display: flex;
@@ -521,6 +515,261 @@
       color: #fff;
     }
 
+    /* ─── Features Section ──────────────────────────────── */
+    .features-section {
+      background: var(--hero-bg);
+      padding: 4rem 0 0;
+      position: relative;
+    }
+
+    .features-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features-blur-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90%;
+      height: 60%;
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(118.5px);
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+
+    .features-blur-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #E01A59 0%, #460A48 100%);
+      clip-path: polygon(15% 0%, 85% 20%, 100% 80%, 20% 95%);
+    }
+
+    .features-title-row {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .coming-soon-sticker {
+      position: absolute;
+      top: -100%;
+      right: 31%;
+    }
+
+    .features-title {
+      font-family: var(--font-main);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: #fff;
+      display: inline;
+      margin-right: 0.5rem;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-teal);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      text-align: center;
+      line-height: 1.2;
+      vertical-align: middle;
+      position: relative;
+      top: -8px;
+      padding: 6px;
+    }
+
+    .feature-pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 0;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 0 1.2rem;
+    }
+
+    .feature-pill .pill-hash {
+      color: var(--input-bg);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .feature-pill+.feature-pill {
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .features-body {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 0 3.5rem;
+
+      /* Stretch to screen edges */
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      padding-left: calc(50vw - 50% + 1.5rem);
+      padding-right: calc(50vw - 50% + 1.5rem);
+
+      background: rgba(23, 6, 23, 0.30);
+      /* #170617 at 30% opacity */
+    }
+
+    .features-body p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 1.2rem;
+      max-width: 740px;
+    }
+
+    .features-body p strong {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* ─── Why Section ───────────────────────────────────── */
+    .why-section {
+      background: var(--why-bg);
+      padding: 4rem 0 4.5rem;
+    }
+
+    .why-heading {
+      font-family: var(--font-main);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.6rem;
+    }
+
+    .why-heading span {
+      color: #C6AAC6;
+    }
+
+    .why-body p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 1rem;
+    }
+
+    .conversion-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .file-icon {
+      width: 74px;
+      height: 88px;
+      border-radius: 5px 12px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 10px;
+      position: relative;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .file-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 0 12px 0 5px;
+      border-left: 2px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .file-icon.html-icon {
+      background: linear-gradient(145deg, #e8830a 60%, #c8620a 100%);
+    }
+
+    .file-icon.html-icon::before {
+      background: #c8620a;
+    }
+
+    .file-icon.pdf-icon {
+      background: linear-gradient(145deg, #c0392b 60%, #96281b 100%);
+    }
+
+    .file-icon.pdf-icon::before {
+      background: #96281b;
+    }
+
+    .file-icon .icon-logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .file-icon .icon-ext {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.04em;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .conversion-middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cpp-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #0080CD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.55rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .conv-arrow {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
     /* ─── Responsive ────────────────────────────────────── */
     @media (max-width: 991px) {
       .cpp-icon-wrap {
@@ -564,6 +813,25 @@
 
       .signup-form {
         max-width: 100%;
+      }
+
+      .feature-pill+.feature-pill {
+        border-left: none;
+      }
+
+      .feature-pills {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1rem;
+      }
+
+      .why-section .row {
+        flex-direction: column-reverse;
+      }
+
+      .conversion-icons {
+        justify-content: center;
+        margin-bottom: 2rem;
       }
     }
 
@@ -642,7 +910,6 @@
             d="M109.335 3.29997H114.901V4.09197H110.204V6.72097H114.406V7.51297H110.204V10.208H114.956V11H109.335V3.29997Z"
             fill="white" />
         </svg>
-
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -681,7 +948,6 @@
   <!-- ── Hero ───────────────────────────────────────────── -->
   <section class="hero" aria-label="Hero – IronPDF for C++ Beta">
 
-    <!-- decorative diagonal ribbons (visual only) -->
     <div class="hero-ribbons" aria-hidden="true">
       <div class="ribbon ribbon-dark"></div>
       <div class="ribbon ribbon-teal"></div>
@@ -689,7 +955,6 @@
       <div class="ribbon ribbon-gold"></div>
     </div>
 
-    <!-- .CPP icon -->
     <div class="cpp-icon-wrap" aria-hidden="true">
       <svg width="780" height="698" viewBox="0 0 780 698" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M164.002 353.076H338.315V142.582L302.838 107H164.002V353.076Z"
@@ -789,7 +1054,6 @@
           </clipPath>
         </defs>
       </svg>
-
     </div>
 
     <div class="container px-4">
@@ -797,7 +1061,6 @@
         <div class="col-lg-7 col-md-8">
           <div class="hero-content">
 
-            <!-- brand label -->
             <div class="hero-product-label">
               <svg width="166" height="40" viewBox="0 0 166 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -825,15 +1088,12 @@
                   d="M32.3009 18.1887V17.0132H27.8501V22.8909H29.1361V20.6154H31.9252V19.4398H29.1361V18.1887H32.3009Z"
                   fill="white" />
               </svg>
-
               <span class="label-suffix">for C++</span>
             </div>
 
             <p class="hero-eyebrow">Building on the success of IronPDF for .NET</p>
-
             <h1 class="hero-title">Beta Software Program</h1>
             <h2 class="hero-subtitle">IronPDF for C++</h2>
-
             <p class="hero-coming-soon">Coming soon</p>
           </div>
         </div>
@@ -869,6 +1129,166 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Features Section ─────────────────────────────────── -->
+  <section class="features-section" aria-label="IronPDF for C++ Features">
+    <div class="container px-4">
+
+      <div class="features-title-row">
+        <h2 class="features-title">IronPDF for C++</h2>
+        <svg width="127" height="127" viewBox="0 0 127 127" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="coming-soon-sticker">
+          <g filter="url(#filter0_d_1_2818)">
+            <path
+              d="M67.2106 20.2321L96.2888 49.3103C96.4421 50.6057 96.521 51.9239 96.521 53.2605C96.521 71.6298 81.6298 86.521 63.2605 86.521C44.8912 86.521 30 71.6298 30 53.2605C30 34.8912 44.8912 20 63.2605 20C64.5971 20 65.9153 20.0788 67.2106 20.2321Z"
+              fill="#63C1A0" />
+            <path d="M96.291 49.3091C81.08 47.5086 69.0145 35.4432 67.214 20.2321L96.291 49.3091Z" fill="#258B74" />
+            <path
+              d="M42.8859 48.4377C44.6035 48.8979 45.7853 48.4137 46.8045 47.5989L45.4869 46.0026C44.8549 46.4429 44.2848 46.6966 43.4706 46.4785C42.3776 46.1856 41.8531 45.0648 42.1669 43.8937L42.1728 43.8714C42.4777 42.7337 43.4983 42.003 44.5914 42.2959C45.3498 42.4991 45.7531 43.0017 46.0528 43.6677L48.0189 42.8437C47.5926 41.7134 46.7235 40.7632 45.1397 40.3389C42.7751 39.7053 40.557 41.0236 39.9473 43.2989L39.9413 43.3212C39.3167 45.6523 40.6552 47.84 42.8859 48.4377ZM50.9936 50.6101C53.4027 51.2557 55.6967 49.9218 56.2974 47.6799L56.3034 47.6576C56.9011 45.4269 55.6007 43.1419 53.1915 42.4963C50.7824 41.8508 48.4884 43.1847 47.8877 45.4266L47.8817 45.4489C47.284 47.6796 48.5844 49.9646 50.9936 50.6101ZM51.5389 48.6643C50.3454 48.3445 49.7972 47.1336 50.0961 46.0183L50.102 45.996C50.4039 44.8695 51.4528 44.1225 52.6462 44.4422C53.8397 44.762 54.3827 45.9476 54.0779 47.0852L54.0719 47.1075C53.7701 48.234 52.7211 48.981 51.5389 48.6643ZM56.3674 51.8827L58.4866 52.4505L59.685 47.978L60.8544 51.5548L60.899 51.5668L63.7144 49.0457L62.513 53.5294L64.6656 54.1062L66.7576 46.2987L64.4711 45.6861L61.7986 48.2096L60.7459 44.6879L58.4594 44.0752L56.3674 51.8827ZM66.1062 54.4922L68.27 55.072L70.362 47.2645L68.1983 46.6847L66.1062 54.4922ZM69.6993 55.455L71.8408 56.0288L72.9884 51.7458L75.1869 56.9254L77.0718 57.4304L79.1638 49.623L77.0223 49.0492L75.9166 53.176L73.8101 48.1884L71.7913 47.6475L69.6993 55.455ZM82.3966 59.0246C83.8354 59.4101 85.0882 59.1959 86.113 58.7174L87.0514 55.2151L83.4711 54.2558L83.0468 55.8396L84.5748 56.249L84.3208 57.1971C83.9517 57.3253 83.5203 57.3293 82.9849 57.1858C81.7469 56.8541 81.1078 55.7146 81.4485 54.4431L81.4545 54.4208C81.7743 53.2273 82.9064 52.5265 84.0218 52.8254C84.8137 53.0376 85.2692 53.4346 85.7095 54.0666L87.3934 52.8681C86.7482 51.9301 85.9107 51.2634 84.5276 50.8928C82.1185 50.2473 79.8557 51.5537 79.2461 53.829L79.2401 53.8513C78.6035 56.227 79.954 58.3701 82.3966 59.0246ZM45.4742 62.5659C47.3703 63.074 48.8847 62.4636 49.312 60.8687L49.318 60.8464C49.7095 59.3853 48.7496 58.5064 47.0696 57.6379C46.0393 57.1108 45.8195 56.8606 45.9121 56.5148L45.9181 56.4925C45.9988 56.1914 46.3091 56.0593 46.8333 56.1998C47.536 56.3881 48.2398 56.8397 48.8132 57.5552L50.3045 56.317C49.6391 55.4095 48.7087 54.7777 47.3702 54.419C45.4964 53.917 44.0697 54.6464 43.6782 56.1075L43.6722 56.1298C43.2419 57.7359 44.4131 58.5399 45.9622 59.3614C46.9613 59.916 47.1759 60.1409 47.0863 60.4755L47.0803 60.4978C46.9877 60.8436 46.6246 60.9495 46.0334 60.7911C45.1411 60.552 44.3772 60.0126 43.7526 59.1758L42.1625 60.2919C42.9139 61.4137 44.08 62.1923 45.4742 62.5659ZM53.6141 64.7709C56.0233 65.4164 58.3173 64.0826 58.918 61.8407L58.924 61.8184C59.5217 59.5877 58.2213 57.3027 55.8121 56.6571C53.403 56.0116 51.1089 57.3455 50.5082 59.5873L50.5023 59.6096C49.9045 61.8403 51.205 64.1254 53.6141 64.7709ZM54.1594 62.825C52.966 62.5052 52.4178 61.2944 52.7166 60.1791L52.7226 60.1568C53.0245 59.0302 54.0734 58.2832 55.2668 58.603C56.4602 58.9228 57.0033 60.1083 56.6984 61.246L56.6925 61.2683C56.3906 62.3948 55.3417 63.1418 54.1594 62.825ZM62.8833 67.2546C65.2925 67.9001 67.5865 66.5662 68.1872 64.3244L68.1932 64.3021C68.7909 62.0714 67.4905 59.7863 65.0813 59.1408C62.6721 58.4953 60.3781 59.8291 59.7774 62.071L59.7715 62.0933C59.1737 64.324 60.4742 66.6091 62.8833 67.2546ZM63.4286 65.3087C62.2352 64.9889 61.687 63.7781 61.9858 62.6627L61.9918 62.6404C62.2937 61.5139 63.3426 60.7669 64.536 61.0867C65.7294 61.4065 66.2725 62.592 65.9676 63.7297L65.9617 63.752C65.6598 64.8785 64.6109 65.6255 63.4286 65.3087ZM68.2572 68.5271L70.3986 69.1009L71.5462 64.818L73.7447 69.9975L75.6296 70.5026L77.7216 62.6951L75.5802 62.1213L74.4744 66.2481L72.3679 61.2606L70.3492 60.7197L68.2572 68.5271Z"
+              fill="white" />
+          </g>
+          <defs>
+            <filter id="filter0_d_1_2818" x="0" y="0" width="126.521" height="126.521" filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+              <feOffset dy="10" />
+              <feGaussianBlur stdDeviation="15" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0.0941176 0 0 0 0 0.0941176 0 0 0 0 0.0941176 0 0 0 0.2 0" />
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2818" />
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2818" result="shape" />
+            </filter>
+          </defs>
+        </svg>
+
+      </div>
+      <div class="features-blur-bg"></div>
+      <div class="feature-pills" role="list" aria-label="Key features">
+        <div class="feature-pill" role="listitem">
+          <span class="pill-hash">#</span>
+          Generate PDFs from HTML in C++
+        </div>
+        <div class="feature-pill" role="listitem">
+          <span class="pill-hash">#</span>
+          Combine, split, and modify PDFs quickly in C++
+        </div>
+        <div class="feature-pill" role="listitem">
+          <span class="pill-hash">#</span>
+          Extract text and images from PDFs using C++
+        </div>
+      </div>
+
+      <div class="features-body">
+        <p>
+          The new <strong>IronPDF library for C++</strong> will enhance the C++ developer's tool set with robust PDF
+          generation and conversion capabilities. Developers will be able to generate new PDFs from HTML content
+          (from text or from URL), as well as to combine, split, extract, and modify content from existing PDFs.
+        </p>
+        <p>
+          <strong>IronPDF for C++</strong> will help developers create C++ applications that can do all of these PDF
+          processing tasks and more, with speed, precision, control, and excellence.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Why Section ──────────────────────────────────────── -->
+  <section class="why-section" aria-label="Why make a C++ PDF Library">
+    <div class="container px-4">
+      <div class="row align-items-center g-5">
+
+        <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
+          <svg width="446" height="354" viewBox="0 0 446 354" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.8" filter="url(#filter0_f_1_2761)">
+              <path
+                d="M89 232.822H190.879V216.803H202.86V194.876H216.013V211.849L242.811 188.177V264.783H344.69V248.779H356.668V216.803H344.69V141.758L323.955 120.961H242.811V145.732L216.013 121.96V138.744H190.879V109.797L170.144 89H89V232.822Z"
+                fill="url(#paint0_linear_1_2761)" />
+            </g>
+            <g filter="url(#filter1_d_1_2761)">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M242.813 264.783H344.692V141.758L323.957 120.961H242.813V264.783Z" fill="#F20036" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M323.986 141.744L334.312 131.372L344.691 141.744V162.544L323.986 141.744Z" fill="#E10029" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M344.691 141.762H323.985V120.978L344.691 141.762Z"
+                fill="#A8000A" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M321.728 173.144L308.826 175.553L297.994 160.763L302.349 150.847L300.063 144.218L286.617 145.095L284.222 149.313L291.516 161.366L281.881 180.595L264.244 183.881L260.706 195.605L269.688 204.918L278.724 204.809L285.91 188.318L304.472 182.95L309.153 190.674L319.169 189.798L324.994 176.978L321.728 173.144ZM290.046 149.751L297.014 150.354L294.347 155.668L290.046 149.751ZM273.553 197.247L270.45 192.811L276.656 191.002L273.553 197.247ZM290.046 179.059L295.163 167.392L301.042 177.033L290.046 179.059ZM312.528 180.595L317.427 179.169L314.488 183.279L312.528 180.595Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M276.771 216.803H356.671V248.779H276.771V216.803Z"
+                fill="#A8000A" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M287.956 237.212V241.192H292.065V237.212H287.956ZM307.848 234.426C308.503 233.911 309.017 233.272 309.392 232.509C309.766 231.747 309.953 230.86 309.953 229.848V229.798C309.953 228.902 309.796 228.085 309.481 227.347C309.166 226.61 308.716 225.975 308.129 225.444C307.542 224.913 306.827 224.503 305.985 224.213C305.143 223.923 304.186 223.777 303.114 223.777H295.816V241.192H299.746V235.968H302.732C303.735 235.968 304.675 235.84 305.551 235.582C306.427 235.324 307.193 234.939 307.848 234.426ZM305.117 227.907C305.687 228.355 305.972 229.011 305.972 229.873V229.922C305.972 230.669 305.7 231.295 305.156 231.8C304.611 232.306 303.846 232.559 302.859 232.559H299.746V227.235H302.783C303.769 227.235 304.547 227.459 305.117 227.907ZM326.681 238.68C327.523 237.9 328.174 236.98 328.633 235.918C329.092 234.857 329.322 233.713 329.322 232.485V232.435C329.322 231.208 329.092 230.067 328.633 229.014C328.174 227.96 327.523 227.045 326.681 226.265C325.839 225.486 324.835 224.876 323.67 224.437C322.504 223.997 321.224 223.777 319.829 223.777H312.863V241.192H319.829C321.224 241.192 322.504 240.968 323.67 240.52C324.835 240.073 325.839 239.459 326.681 238.68ZM324.818 230.371C325.082 231.016 325.214 231.722 325.214 232.485V232.534C325.214 233.314 325.082 234.019 324.818 234.65C324.554 235.28 324.189 235.828 323.721 236.291C323.253 236.756 322.687 237.112 322.024 237.361C321.36 237.609 320.629 237.734 319.829 237.734H316.792V227.235H319.829C320.629 227.235 321.36 227.364 322.024 227.621C322.687 227.878 323.253 228.239 323.721 228.703C324.189 229.168 324.554 229.724 324.818 230.371ZM336.748 230.992V227.235H346.42V223.777H332.818V241.192H336.748V234.45H345.271V230.992H336.748Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M219.013 121.953V138.737H159.92V194.869H219.013V211.842L269.785 166.992L219.013 121.953Z"
+                fill="#1B0B1C" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M234 160.524C234 159.791 233.474 158.892 232.831 158.525L221.669 152.162C221.026 151.796 219.974 151.796 219.331 152.162L208.169 158.525C207.526 158.892 207 159.791 207 160.524V173.25C207 173.617 207.131 174.025 207.343 174.387C207.555 174.75 207.847 175.066 208.169 175.25L219.331 181.612C219.662 181.801 220.102 181.893 220.539 181.887C220.632 181.886 220.725 181.88 220.816 181.87C221.129 181.836 221.428 181.75 221.669 181.612L232.831 175.25C233.152 175.066 233.445 174.75 233.656 174.387C233.868 174.025 234 173.617 234 173.25V160.524ZM220.5 175.774C215.537 175.774 211.5 171.787 211.5 166.887C211.5 161.987 215.537 158.001 220.5 158.001C223.702 158.001 226.689 159.703 228.294 162.441L224.399 164.667C223.596 163.296 222.101 162.444 220.5 162.444C218.019 162.444 216 164.437 216 166.887C216 169.337 218.019 171.331 220.5 171.331C222.102 171.331 223.596 170.479 224.399 169.108L228.294 171.333C226.689 174.072 223.702 175.774 220.5 175.774ZM229.5 166.394H228.5V165.406H227.5V166.394H226.5V167.381H227.5V168.368H228.5V167.381H229.5V166.394ZM233.25 166.394H232.25V165.406H231.25V166.394H230.25V167.381H231.25V168.368H232.25V167.381H233.25V166.394Z"
+                fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M89 232.822H190.879V109.797L170.144 89.0002H89V232.822Z"
+                fill="#F49400" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M170.174 109.801L180.499 99.427L190.879 109.801V130.6L170.174 109.801Z" fill="#F08400" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M190.878 109.818H170.173V89.0354L190.878 109.818Z"
+                fill="#D23F00" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M105.982 184.828H202.86V216.804H105.982V184.828Z"
+                fill="#D24000" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M162.132 129.773H140.942H128.558L129.359 138.806H140.942H161.331L158.924 165.886L140.942 170.894L140.927 170.9L122.954 165.886L121.698 151.722H130.504L131.16 159.072L140.932 161.723L140.942 161.718L150.724 159.067L151.744 147.628H140.942H121.338L118.966 120.961H140.942H162.912L162.132 129.773Z"
+                fill="#FEFEFE" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M134.22 209.867V202.65H127.128V209.867H123.283V191.889H127.128V199.003H134.22V191.889H138.065V209.867H134.22ZM114.983 209.867V205.758H119.003V209.867H114.983ZM150.1 209.867V195.535H155.418V191.889H140.936V195.535H146.255V209.867H150.1ZM171.96 209.867V198.13L167.041 205.809H166.942L162.073 198.207V209.867H158.277V191.889H162.422L167.016 199.491L171.611 191.889H175.756V209.867H171.96ZM180.315 191.889V209.867H192.875V206.297H184.16V191.889H180.315Z"
+                fill="white" />
+            </g>
+            <defs>
+              <filter id="filter0_f_1_2761" x="0" y="0" width="445.668" height="353.783" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="44.5" result="effect1_foregroundBlur_1_2761" />
+              </filter>
+              <filter id="filter1_d_1_2761" x="69" y="74.0002" width="307.671" height="215.783"
+                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha" />
+                <feOffset dy="5" />
+                <feGaussianBlur stdDeviation="10" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2761" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2761" result="shape" />
+              </filter>
+              <linearGradient id="paint0_linear_1_2761" x1="47.8588" y1="103.086" x2="255.471" y2="304.213"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#E01A59" />
+                <stop offset="1" stop-color="#460A48" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+        </div>
+
+        <div class="col-md-8">
+          <h2 class="why-heading">
+            Why make a <span>C++ PDF Library</span>
+          </h2>
+          <div class="why-body">
+            <p>
+              C++ is one of the most popular, oldest, and important programming languages in use, being the language
+              of choice in low-level systems and network programming and other domains where performance is critical.
+            </p>
+            <p>
+              The release of IronPDF for C++ will aid developers in building performant applications that can carry
+              out PDF-related processing tasks.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
