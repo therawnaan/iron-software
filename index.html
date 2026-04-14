@@ -13,9 +13,7 @@
 
   <!-- Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <!-- Local Gotham Fonts -->
   <style>
-    /* ── Gotham ───────────────────────────────────────────── */
     @font-face {
       font-family: 'Gotham';
       src: url('assets/fonts/gotham/Gotham/Gotham Thin/Gotham Thin.otf') format('opentype');
@@ -98,7 +96,6 @@
   </style>
 
   <style>
-    /* ─── CSS Variables ─────────────────────────────────── */
     :root {
       --nav-bg: #0d0d1a;
       --hero-bg: #2C0F29;
@@ -114,7 +111,6 @@
       --font-cond: 'Gotham', sans-serif;
     }
 
-    /* ─── Reset / Base ──────────────────────────────────── */
     *,
     *::before,
     *::after {
@@ -133,7 +129,7 @@
       text-decoration: none;
     }
 
-    /* ─── Navbar ────────────────────────────────────────── */
+    /* ── Navbar ── */
     .site-nav {
       padding: 0.55rem 0;
     }
@@ -206,7 +202,7 @@
       filter: invert(1);
     }
 
-    /* ─── Hero Section ──────────────────────────────────── */
+    /* ── Hero ── */
     .hero {
       background: var(--hero-bg);
       position: relative;
@@ -276,56 +272,6 @@
       z-index: 2;
     }
 
-    .cpp-icon {
-      width: 100px;
-      height: 115px;
-      background: linear-gradient(135deg, #1565c0 60%, #0d47a1 100%);
-      border-radius: 6px 14px 6px 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    }
-
-    .cpp-icon::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 22px;
-      height: 22px;
-      background: #0d47a1;
-      border-radius: 0 14px 0 6px;
-      border-left: 2px solid rgba(255, 255, 255, 0.15);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .cpp-icon .cpp-logo {
-      font-family: var(--font-cond);
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .cpp-icon .cpp-logo sup {
-      font-size: 0.75em;
-      vertical-align: super;
-    }
-
-    .cpp-icon .cpp-ext {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.9);
-      letter-spacing: 0.05em;
-      background: rgba(0, 0, 0, 0.25);
-      padding: 1px 6px;
-      border-radius: 3px;
-    }
-
     .hero-content {
       position: relative;
       z-index: 3;
@@ -384,7 +330,7 @@
       color: #C6AAC6;
     }
 
-    /* ─── CTA Section ───────────────────────────────────── */
+    /* ── CTA ── */
     .cta-section {
       background: linear-gradient(to right, #8E608E, #402640, #371A34);
       padding: 2.4rem 0 2rem;
@@ -495,7 +441,7 @@
       margin: 0 1px;
     }
 
-    /* ─── Dropdown Menu ─────────────────────────────────── */
+    /* ── Dropdown ── */
     .dropdown-menu {
       background: var(--nav-bg);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -515,14 +461,10 @@
       color: #fff;
     }
 
-    /* ─── Features Section ──────────────────────────────── */
+    /* ── Features ── */
     .features-section {
       background: var(--hero-bg);
       padding: 4rem 0 0;
-      position: relative;
-    }
-
-    .features-section {
       position: relative;
       overflow: hidden;
     }
@@ -570,27 +512,6 @@
       margin-right: 0.5rem;
     }
 
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent-teal);
-      color: #fff;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 50%;
-      width: 52px;
-      height: 52px;
-      text-align: center;
-      line-height: 1.2;
-      vertical-align: middle;
-      position: relative;
-      top: -8px;
-      padding: 6px;
-    }
-
     .feature-pills {
       display: flex;
       align-items: center;
@@ -626,15 +547,11 @@
       position: relative;
       z-index: 1;
       padding: 2.5rem 0 3.5rem;
-
-      /* Stretch to screen edges */
       margin-left: calc(-50vw + 50%);
       margin-right: calc(-50vw + 50%);
       padding-left: calc(50vw - 50% + 1.5rem);
       padding-right: calc(50vw - 50% + 1.5rem);
-
       background: rgba(23, 6, 23, 0.30);
-      /* #170617 at 30% opacity */
     }
 
     .features-body p {
@@ -651,7 +568,7 @@
       color: #fff;
     }
 
-    /* ─── Why Section ───────────────────────────────────── */
+    /* ── Why ── */
     .why-section {
       background: var(--why-bg);
       padding: 4rem 0 4.5rem;
@@ -770,7 +687,208 @@
       line-height: 1;
     }
 
-    /* ─── Responsive ────────────────────────────────────── */
+    /* ── Early Access Section ── */
+    .early-access-section {
+      background: #1e0a1e;
+      padding-top: 4rem;
+      position: relative;
+      /* needed for blur bg */
+      overflow: hidden;
+      /* clip the blur blob */
+    }
+
+    /* Blur background blob — mirrors features-blur-bg, positioned top-right */
+    .early-access-blur-bg {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      width: 90%;
+      height: 80%;
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(118.5px);
+      transform: scale(1.1);
+      opacity: 0.3;
+    }
+
+    .early-access-blur-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #E01A59 0%, #460A48 100%);
+      clip-path: polygon(15% 0%, 85% 20%, 100% 80%, 20% 95%);
+    }
+
+    .early-access-heading {
+      font-family: var(--font-main);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .early-access-heading span {
+      color: #C6AAC6;
+    }
+
+    .early-access-body {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex: 1 1 0;
+      background: rgba(23, 6, 23, 0.60);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      padding: 0.75rem 2rem 0.75rem 0.75rem;
+    }
+
+    .product-card-badge {
+      font-family: var(--font-main);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+
+    .product-card-badge.released {
+      background: #C6AAC6;
+      color: #331433;
+      border: 2px solid #431F43;
+    }
+
+    .product-card-badge.coming-soon {
+      background: #331433;
+      color: #C6AAC6;
+      border: 1px solid #331433;
+    }
+
+    .product-card-info {
+      display: flex;
+      gap: 5px;
+      line-height: 1.25;
+    }
+
+    .product-card-info span {
+      margin: auto;
+      color: #C6AAC6;
+    }
+
+    .product-card-name {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
+    .product-card-name strong {
+      font-weight: 900;
+    }
+
+    .product-card-sub {
+      font-size: 0.75rem;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .early-access-signup {
+      text-align: center;
+      padding: 3rem 0 3.5rem;
+
+      /* Full-bleed background */
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      padding-left: calc(50vw - 50% + 1.5rem);
+      padding-right: calc(50vw - 50% + 1.5rem);
+
+      background: rgba(23, 6, 23, 0.30);
+      position: relative;
+      z-index: 1;
+    }
+
+    .early-access-signup-heading {
+      font-family: var(--font-main);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .early-access-signup-heading span {
+      color: #C6AAC6;
+    }
+
+    .early-access-form {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      border: 2px solid #fff;
+      background: #fff;
+      border-radius: 100px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .early-access-form input[type="email"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px 25px;
+      font-size: 14px;
+      color: #431F43;
+      background: transparent;
+      font-family: var(--font-main);
+    }
+
+    .early-access-form input[type="email"]::placeholder {
+      color: #181818;
+    }
+
+    .early-access-form button {
+      background: var(--accent-pink);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: var(--font-main);
+      transition: background 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .early-access-form button:hover,
+    .early-access-form button:focus {
+      background: #c9124d;
+      outline: 2px solid var(--accent-teal);
+      outline-offset: 2px;
+    }
+
+    /* ── Responsive ── */
     @media (max-width: 991px) {
       .cpp-icon-wrap {
         right: 12%;
@@ -833,6 +951,14 @@
         justify-content: center;
         margin-bottom: 2rem;
       }
+
+      .product-cards {
+        flex-direction: column;
+      }
+
+      .early-access-form {
+        max-width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -855,16 +981,30 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .early-access-form {
+        flex-direction: column;
+        border-radius: 6px;
+      }
+
+      .early-access-form input[type="email"] {
+        border-bottom: 1px solid #eee;
+      }
+
+      .early-access-form button {
+        border-radius: 0 0 4px 4px;
+        padding: 0.75rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ── Navbar ──────────────────────────────────────────── -->
+  <!-- ── Navbar ── -->
   <nav class="site-nav navbar navbar-expand-lg" aria-label="Main navigation">
     <div class="container-fluid px-4">
-
       <a class="navbar-brand" href="#" aria-label="Iron Software home">
         <svg width="115" height="15" viewBox="0 0 115 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -919,11 +1059,9 @@
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Products
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Products</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">IronPDF</a></li>
               <li><a class="dropdown-item" href="#">IronOCR</a></li>
@@ -931,23 +1069,15 @@
               <li><a class="dropdown-item" href="#">IronBarcode</a></li>
             </ul>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Career</a>
-          </li>
-
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ── Hero ───────────────────────────────────────────── -->
+  <!-- ── Hero ── -->
   <section class="hero" aria-label="Hero – IronPDF for C++ Beta">
-
     <div class="hero-ribbons" aria-hidden="true">
       <div class="ribbon ribbon-dark"></div>
       <div class="ribbon ribbon-teal"></div>
@@ -1060,7 +1190,6 @@
       <div class="row">
         <div class="col-lg-7 col-md-8">
           <div class="hero-content">
-
             <div class="hero-product-label">
               <svg width="166" height="40" viewBox="0 0 166 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -1090,7 +1219,6 @@
               </svg>
               <span class="label-suffix">for C++</span>
             </div>
-
             <p class="hero-eyebrow">Building on the success of IronPDF for .NET</p>
             <h1 class="hero-title">Beta Software Program</h1>
             <h2 class="hero-subtitle">IronPDF for C++</h2>
@@ -1101,24 +1229,20 @@
     </div>
   </section>
 
-  <!-- ── CTA ────────────────────────────────────────────── -->
+  <!-- ── CTA ── -->
   <section class="cta-section" aria-label="Early access sign up">
     <div class="container px-4">
       <div class="row">
         <div class="col-lg-8">
-
           <h2 class="cta-heading">Be one of the first</h2>
           <p class="cta-subheading">Sign up NOW to get early access!</p>
-
           <form class="signup-form" action="#" method="post" novalidate aria-label="Early access sign up form">
             <label for="emailInput" class="visually-hidden">Enter your email address</label>
             <input type="email" id="emailInput" name="email" placeholder="Enter email adress" autocomplete="email"
               aria-required="true" />
-            <button type="submit" aria-label="Sign up now for early access">
-              Sign up now <span class="arrow" aria-hidden="true">›</span>
-            </button>
+            <button type="submit" aria-label="Sign up now for early access">Sign up now <span class="arrow"
+                aria-hidden="true">›</span></button>
           </form>
-
           <div class="badge-row" aria-label="Also coming soon for other platforms">
             <span class="badge-soon"># Coming Soon</span>
             <span class="badge-post-label">
@@ -1127,16 +1251,14 @@
                 class="sep"> | </span><span class="lang">Java</span>
             </span>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Features Section ─────────────────────────────────── -->
+  <!-- ── Features Section ── -->
   <section class="features-section" aria-label="IronPDF for C++ Features">
     <div class="container px-4">
-
       <div class="features-title-row">
         <h2 class="features-title">IronPDF for C++</h2>
         <svg width="127" height="127" viewBox="0 0 127 127" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -1164,44 +1286,29 @@
             </filter>
           </defs>
         </svg>
-
       </div>
       <div class="features-blur-bg"></div>
       <div class="feature-pills" role="list" aria-label="Key features">
-        <div class="feature-pill" role="listitem">
-          <span class="pill-hash">#</span>
-          Generate PDFs from HTML in C++
-        </div>
-        <div class="feature-pill" role="listitem">
-          <span class="pill-hash">#</span>
-          Combine, split, and modify PDFs quickly in C++
-        </div>
-        <div class="feature-pill" role="listitem">
-          <span class="pill-hash">#</span>
-          Extract text and images from PDFs using C++
-        </div>
+        <div class="feature-pill" role="listitem"><span class="pill-hash">#</span> Generate PDFs from HTML in C++</div>
+        <div class="feature-pill" role="listitem"><span class="pill-hash">#</span> Combine, split, and modify PDFs
+          quickly in C++</div>
+        <div class="feature-pill" role="listitem"><span class="pill-hash">#</span> Extract text and images from PDFs
+          using C++</div>
       </div>
-
       <div class="features-body">
-        <p>
-          The new <strong>IronPDF library for C++</strong> will enhance the C++ developer's tool set with robust PDF
-          generation and conversion capabilities. Developers will be able to generate new PDFs from HTML content
-          (from text or from URL), as well as to combine, split, extract, and modify content from existing PDFs.
-        </p>
-        <p>
-          <strong>IronPDF for C++</strong> will help developers create C++ applications that can do all of these PDF
-          processing tasks and more, with speed, precision, control, and excellence.
-        </p>
+        <p>The new <strong>IronPDF library for C++</strong> will enhance the C++ developer's tool set with robust PDF
+          generation and conversion capabilities. Developers will be able to generate new PDFs from HTML content (from
+          text or from URL), as well as to combine, split, extract, and modify content from existing PDFs.</p>
+        <p><strong>IronPDF for C++</strong> will help developers create C++ applications that can do all of these PDF
+          processing tasks and more, with speed, precision, control, and excellence.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ── Why Section ──────────────────────────────────────── -->
+  <!-- ── Why Section ── -->
   <section class="why-section" aria-label="Why make a C++ PDF Library">
     <div class="container px-4">
       <div class="row align-items-center g-5">
-
         <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
           <svg width="446" height="354" viewBox="0 0 446 354" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.8" filter="url(#filter0_f_1_2761)">
@@ -1270,26 +1377,69 @@
               </linearGradient>
             </defs>
           </svg>
-
         </div>
-
         <div class="col-md-8">
-          <h2 class="why-heading">
-            Why make a <span>C++ PDF Library</span>
-          </h2>
+          <h2 class="why-heading">Why make a <span>C++ PDF Library</span></h2>
           <div class="why-body">
-            <p>
-              C++ is one of the most popular, oldest, and important programming languages in use, being the language
-              of choice in low-level systems and network programming and other domains where performance is critical.
-            </p>
-            <p>
-              The release of IronPDF for C++ will aid developers in building performant applications that can carry
-              out PDF-related processing tasks.
-            </p>
+            <p>C++ is one of the most popular, oldest, and important programming languages in use, being the language of
+              choice in low-level systems and network programming and other domains where performance is critical.</p>
+            <p>The release of IronPDF for C++ will aid developers in building performant applications that can carry out
+              PDF-related processing tasks.</p>
           </div>
         </div>
-
       </div>
+    </div>
+  </section>
+
+  <!-- ── Early Access Section ── -->
+  <section class="early-access-section" aria-label="Early Access to C++ PDF Library">
+    <div class="container px-4">
+
+      <h2 class="early-access-heading">Early Access to <span>C++ PDF Library</span></h2>
+      <!-- Blur background blob -->
+      <div class="early-access-blur-bg" aria-hidden="true"></div>
+
+      <p class="early-access-body">
+        Joining the early access program will allow you to collaborate closely with our engineering team. You will be
+        playing a key role in the development process as you share your early experiences using the C++ PDF library
+        before its official launch. Your continual feedback after we release the library will be immensely helpful as we
+        release new features and improve on existing features.
+      </p>
+
+      <div class="product-cards" aria-label="Available platforms">
+        <div class="product-card">
+          <span class="product-card-badge released"># Released</span>
+          <div class="product-card-info">
+            <span class="product-card-name"><strong>IRON</strong>PDF</span>
+            <span class="product-card-sub">for Java</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <span class="product-card-badge coming-soon"># Coming Soon</span>
+          <div class="product-card-info">
+            <span class="product-card-name"><strong>IRON</strong>PDF</span>
+            <span class="product-card-sub">for Python</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <span class="product-card-badge coming-soon"># Coming Soon</span>
+          <div class="product-card-info">
+            <span class="product-card-name"><strong>IRON</strong>PDF</span>
+            <span class="product-card-sub">for NodeJS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="early-access-signup">
+        <h3 class="early-access-signup-heading">Sign up to our <span>Beta Program</span></h3>
+        <form class="early-access-form" action="#" method="post" novalidate aria-label="Beta program sign up form">
+          <label for="betaEmailInput" class="visually-hidden">Enter your email address</label>
+          <input type="email" id="betaEmailInput" name="email" placeholder="Enter email adress" autocomplete="email"
+            aria-required="true" />
+          <button type="submit" aria-label="Sign up now for beta access">Sign up now ›</button>
+        </form>
+      </div>
+
     </div>
   </section>
 
