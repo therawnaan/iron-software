@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="IronPDF for C++ Beta Software Program – Be one of the first to get early access. Building on the success of IronPDF for .NET." />
+  <meta name="keywords" content="IronPDF, C++, PDF, Beta, Iron Software" />
+  <meta property="og:title" content="IronPDF for C++ – Beta Software Program" />
+  <meta property="og:description" content="Sign up now to get early access to IronPDF for C++." />
+  <title>IronPDF for C++ – Beta Software Program | Iron Software</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Local Gotham Fonts -->
+  <style>
+    /* ── Gotham ───────────────────────────────────────────── */
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Thin/Gotham Thin.otf') format('opentype');
+      font-weight: 100;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Light/Gotham Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Light Italic/Gotham Light Italic.otf') format('opentype');
+      font-weight: 300;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Medium/Gotham Medium.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Medium Italic/Gotham Medium Italic.otf') format('opentype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Medium/Gotham Medium.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Medium Italic/Gotham Medium Italic.otf') format('opentype');
+      font-weight: 600;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Bold/Gotham Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Bold Italic/Gotham Bold Italic.otf') format('opentype');
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Gotham';
+      src: url('assets/fonts/gotham/Gotham/Gotham Black/Gotham Black.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    /* ─── CSS Variables ─────────────────────────────────── */
+    :root {
+      --nav-bg: #0d0d1a;
+      --hero-bg: #2C0F29;
+      --cta-bg: #1a1535;
+      --accent-pink: #e8185a;
+      --accent-teal: #00b4c8;
+      --text-primary: #ffffff;
+      --text-muted: #a8a8c0;
+      --badge-bg: #C6AAC6;
+      --input-bg: #ffffff;
+      --font-main: 'Gotham', sans-serif;
+      --font-cond: 'Gotham', sans-serif;
+    }
+
+    /* ─── Reset / Base ──────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background: var(--hero-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ─── Navbar ────────────────────────────────────────── */
+    .site-nav {
+      padding: 0.55rem 0;
+    }
+
+    .site-nav .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-cond);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-icon {
+      width: 20px;
+      height: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .brand-icon span {
+      display: block;
+      border-radius: 1px;
+    }
+
+    .brand-icon span:nth-child(1) {
+      background: var(--accent-teal);
+    }
+
+    .brand-icon span:nth-child(2) {
+      background: var(--accent-pink);
+    }
+
+    .brand-icon span:nth-child(3) {
+      background: var(--accent-pink);
+    }
+
+    .brand-icon span:nth-child(4) {
+      background: var(--accent-teal);
+    }
+
+    .site-nav .nav-link {
+      color: rgba(255, 255, 255) !important;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem !important;
+      transition: color 0.2s;
+    }
+
+    .site-nav .nav-link:hover,
+    .site-nav .nav-link:focus {
+      color: #fff !important;
+    }
+
+    .site-nav .dropdown-toggle::after {
+      border-top-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* ─── Hero Section ──────────────────────────────────── */
+    .hero {
+      background: var(--hero-bg);
+      position: relative;
+      /* overflow: hidden; */
+      padding: 3.5rem 0 0;
+      min-height: 340px;
+    }
+
+    /* decorative diagonal ribbons */
+    .hero-ribbons {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 52%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ribbon {
+      position: absolute;
+      transform-origin: center center;
+    }
+
+    .ribbon-teal {
+      width: 14px;
+      height: 160%;
+      background: var(--accent-teal);
+      top: -20%;
+      right: 22%;
+      transform: rotate(-28deg);
+      opacity: 0.9;
+    }
+
+    .ribbon-pink {
+      width: 22px;
+      height: 140%;
+      background: var(--accent-pink);
+      top: -10%;
+      right: 14%;
+      transform: rotate(-28deg);
+      opacity: 1;
+    }
+
+    .ribbon-gold {
+      width: 18px;
+      height: 150%;
+      background: #c89a10;
+      top: -15%;
+      right: 6%;
+      transform: rotate(-28deg);
+      opacity: 0.85;
+    }
+
+    .ribbon-dark {
+      width: 60px;
+      height: 160%;
+      background: #1e1c3a;
+      top: -20%;
+      right: 28%;
+      transform: rotate(-28deg);
+    }
+
+    /* CPP file icon placeholder */
+    .cpp-icon-wrap {
+      position: absolute;
+      top: 75%;
+      right: 25%;
+      transform: translate(50%, -50%);
+      z-index: 2;
+    }
+
+    .cpp-icon {
+      width: 100px;
+      height: 115px;
+      background: linear-gradient(135deg, #1565c0 60%, #0d47a1 100%);
+      border-radius: 6px 14px 6px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .cpp-icon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      background: #0d47a1;
+      border-radius: 0 14px 0 6px;
+      border-left: 2px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .cpp-icon .cpp-logo {
+      font-family: var(--font-cond);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .cpp-icon .cpp-logo sup {
+      font-size: 0.75em;
+      vertical-align: super;
+    }
+
+    .cpp-icon .cpp-ext {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.05em;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* hero text */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding-bottom: 2.5rem;
+    }
+
+    .hero-product-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-product-label .brand-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-product-label .label-suffix {
+      color: var(--input-bg);
+      font-size: 17px;
+      font-weight: 300;
+    }
+
+    .hero-eyebrow {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--input-bg);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title {
+      font-family: var(--font-cond);
+      font-size: clamp(50px, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-cond);
+      font-size: clamp(50px, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: #C6AAC6;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-coming-soon {
+      font-size: 14px;
+      font-weight: 100;
+      color: #C6AAC6;
+    }
+
+    /* ─── CTA Section ───────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(to right, #8E608E, #402640, #371A34);
+      padding: 2.4rem 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-heading {
+      font-family: var(--font-cond);
+      font-size: clamp(40px, 4vw, 2.4rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .cta-subheading {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.4rem;
+    }
+
+    /* email form */
+    .signup-form {
+      display: flex;
+      gap: 0;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 100px;
+      border: 3px solid #C6AAC6;
+      overflow: hidden;
+      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
+    }
+
+    .signup-form input[type="email"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px 35px;
+      font-size: 14px;
+      color: #431F43;
+      background: transparent;
+      font-family: var(--font-main);
+    }
+
+    .signup-form input[type="email"]::placeholder {
+      color: #431F43;
+    }
+
+    .signup-form button {
+      background: var(--accent-pink);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: var(--font-main);
+      transition: background 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .signup-form button:hover,
+    .signup-form button:focus {
+      background: #c9124d;
+      outline: 2px solid var(--accent-teal);
+      outline-offset: 2px;
+    }
+
+    .signup-form button .arrow {
+      margin-left: 3px;
+    }
+
+    /* coming soon badge row */
+    .badge-row {
+      margin-top: 1.1rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .badge-soon {
+      background: var(--badge-bg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8F618F;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-post-label {
+      font-weight: 100;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .badge-row .lang {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+
+    .badge-row .sep {
+      color: rgba(255, 255, 255, 0.3);
+      margin: 0 1px;
+    }
+
+    /* ─── Dropdown Menu ─────────────────────────────────── */
+    .dropdown-menu {
+      background: var(--nav-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-width: 160px;
+    }
+
+    .dropdown-item {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: #fff;
+    }
+
+    /* ─── Responsive ────────────────────────────────────── */
+    @media (max-width: 991px) {
+      .cpp-icon-wrap {
+        right: 12%;
+        transform: translate(0, -50%);
+      }
+
+      .hero-ribbons {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 2rem 0 0;
+        min-height: auto;
+      }
+
+      .cpp-icon-wrap {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+      }
+
+      .hero-ribbons {
+        width: 100%;
+        opacity: 0.35;
+      }
+
+      .hero-content {
+        padding-bottom: 1.5rem;
+      }
+
+      .cta-section {
+        padding: 2rem 0 1.8rem;
+      }
+
+      .signup-form {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .signup-form {
+        flex-direction: column;
+        border-radius: 6px;
+      }
+
+      .signup-form input[type="email"] {
+        border-bottom: 1px solid #eee;
+      }
+
+      .signup-form button {
+        border-radius: 0 0 4px 4px;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .badge-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navbar ──────────────────────────────────────────── -->
+  <nav class="site-nav navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container-fluid px-4">
+
+      <a class="navbar-brand" href="#" aria-label="Iron Software home">
+        <svg width="115" height="15" viewBox="0 0 115 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.07085 0L5.22456 3.25503H2.02342L1.37951 5.66088H7.03672L7.68064 3.25503H7.66222L8.50851 0H6.07085Z"
+            fill="white" />
+          <path
+            d="M16.2818 3.25503L15.5919 5.66088L9.93466 5.66086L10.5786 3.25503H10.5797L11.4524 0H13.8901L13.0438 3.25503H16.2818Z"
+            fill="white" />
+          <path d="M6.28024 8.61808L6.30113 8.53852H0.597911L0 10.9915H3.18459L2.34531 14.2466H4.82896L6.28024 8.61808Z"
+            fill="white" />
+          <path
+            d="M14.2117 10.9915L14.8556 8.53852H9.19838L8.55447 10.9915H8.56633L7.72703 14.2466H10.1647L11.004 10.9915H14.2117Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M36.3075 11.132C35.7135 11.132 35.1672 11.0293 34.6685 10.824C34.1699 10.6113 33.7372 10.329 33.3705 9.97697C33.0112 9.61764 32.7289 9.19964 32.5235 8.72297C32.3255 8.23897 32.2265 7.72197 32.2265 7.17197V7.14997C32.2265 6.59997 32.3292 6.08664 32.5345 5.60997C32.7399 5.12597 33.0222 4.7043 33.3815 4.34497C33.7482 3.9783 34.1809 3.6923 34.6795 3.48697C35.1855 3.2743 35.7355 3.16797 36.3295 3.16797C36.9235 3.16797 37.4699 3.2743 37.9685 3.48697C38.4672 3.6923 38.8962 3.97464 39.2555 4.33397C39.6222 4.68597 39.9045 5.10397 40.1025 5.58797C40.3079 6.06464 40.4105 6.57797 40.4105 7.12797V7.14997C40.4105 7.69997 40.3079 8.21697 40.1025 8.70097C39.8972 9.17764 39.6112 9.5993 39.2445 9.96597C38.8852 10.3253 38.4525 10.6113 37.9465 10.824C37.4479 11.0293 36.9015 11.132 36.3075 11.132ZM36.3295 9.56997C36.6669 9.56997 36.9785 9.50764 37.2645 9.38297C37.5505 9.2583 37.7925 9.08597 37.9905 8.86597C38.1959 8.64597 38.3535 8.39297 38.4635 8.10697C38.5809 7.81364 38.6395 7.50197 38.6395 7.17197V7.14997C38.6395 6.81997 38.5809 6.5083 38.4635 6.21497C38.3535 5.92164 38.1922 5.66497 37.9795 5.44497C37.7742 5.22497 37.5285 5.05264 37.2425 4.92797C36.9565 4.79597 36.6449 4.72997 36.3075 4.72997C35.9629 4.72997 35.6475 4.7923 35.3615 4.91697C35.0829 5.04164 34.8409 5.21397 34.6355 5.43397C34.4375 5.65397 34.2799 5.91064 34.1625 6.20397C34.0525 6.48997 33.9975 6.79797 33.9975 7.12797V7.14997C33.9975 7.47997 34.0525 7.79164 34.1625 8.08497C34.2799 8.3783 34.4412 8.63497 34.6465 8.85497C34.8592 9.07497 35.1049 9.25097 35.3835 9.38297C35.6695 9.50764 35.9849 9.56997 36.3295 9.56997Z"
+            fill="white" />
+          <path d="M22.694 3.29997H21V11H22.694V3.29997Z" fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M28.1383 3.29997H24.6183V11H26.3123V8.53597H27.6433L29.2933 11H31.2733L29.3923 8.24997C29.8836 8.06664 30.2796 7.78064 30.5803 7.39197C30.8883 6.99597 31.0423 6.4863 31.0423 5.86297V5.84097C31.0423 5.10764 30.8223 4.52097 30.3823 4.08097C29.8616 3.5603 29.1136 3.29997 28.1383 3.29997ZM28.9853 6.74297C28.7653 6.94097 28.4463 7.03997 28.0283 7.03997H26.3123V4.82897H27.9953C28.4133 4.82897 28.7396 4.92064 28.9743 5.10397C29.209 5.2873 29.3263 5.5623 29.3263 5.92897V5.95097C29.3263 6.28097 29.2126 6.54497 28.9853 6.74297Z"
+            fill="white" />
+          <path
+            d="M43.4752 3.29997H41.9132V11H43.5852V6.10497L47.3142 11H48.7552V3.29997H47.0832V8.04097L43.4752 3.29997Z"
+            fill="white" />
+          <path
+            d="M51.4397 5.22497C51.4397 5.04897 51.4763 4.88397 51.5497 4.72997C51.6303 4.57597 51.7403 4.44397 51.8797 4.33397C52.0263 4.22397 52.1987 4.13597 52.3967 4.06997C52.602 4.00397 52.8293 3.97097 53.0787 3.97097C53.4747 3.97097 53.8523 4.03697 54.2117 4.16897C54.5783 4.30097 54.9413 4.51364 55.3007 4.80697L55.8067 4.13597C55.4107 3.82064 55 3.58597 54.5747 3.43197C54.1567 3.27064 53.6653 3.18997 53.1007 3.18997C52.734 3.18997 52.3967 3.24497 52.0887 3.35497C51.7807 3.45763 51.513 3.6043 51.2857 3.79497C51.0583 3.9783 50.8823 4.1983 50.7577 4.45497C50.633 4.71164 50.5707 4.99397 50.5707 5.30197C50.5707 5.62464 50.622 5.9033 50.7247 6.13797C50.8273 6.37264 50.985 6.57797 51.1977 6.75397C51.4103 6.92997 51.678 7.0803 52.0007 7.20497C52.3307 7.32964 52.7157 7.43964 53.1557 7.53497C53.559 7.62297 53.889 7.71464 54.1457 7.80997C54.4097 7.9053 54.615 8.01164 54.7617 8.12897C54.9083 8.2463 55.011 8.3783 55.0697 8.52497C55.1283 8.6643 55.1577 8.82564 55.1577 9.00897C55.1577 9.40497 55 9.72397 54.6847 9.96597C54.3767 10.208 53.9623 10.329 53.4417 10.329C52.9063 10.329 52.4333 10.241 52.0227 10.065C51.612 9.88164 51.205 9.60664 50.8017 9.23997L50.2627 9.87797C50.7247 10.296 51.2087 10.6076 51.7147 10.813C52.228 11.011 52.7927 11.11 53.4087 11.11C53.79 11.11 54.142 11.0586 54.4647 10.956C54.7873 10.8533 55.0623 10.7066 55.2897 10.516C55.5243 10.3253 55.7077 10.0943 55.8397 9.82297C55.9717 9.55164 56.0377 9.25097 56.0377 8.92097C56.0377 8.32697 55.8323 7.8613 55.4217 7.52397C55.0183 7.18664 54.3877 6.92264 53.5297 6.73197C53.1043 6.64397 52.756 6.5523 52.4847 6.45697C52.2133 6.3543 52.0007 6.2443 51.8467 6.12697C51.6927 6.0023 51.5863 5.86664 51.5277 5.71997C51.469 5.5733 51.4397 5.4083 51.4397 5.22497Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M65.0318 5.62097C65.2225 6.09764 65.3178 6.60364 65.3178 7.13897C65.3178 7.6743 65.2225 8.18397 65.0318 8.66797C64.8411 9.14464 64.5735 9.5663 64.2288 9.93297C63.8841 10.2996 63.4698 10.593 62.9858 10.813C62.5018 11.0256 61.9665 11.132 61.3798 11.132C60.7931 11.132 60.2578 11.0256 59.7738 10.813C59.2971 10.6003 58.8865 10.3143 58.5418 9.95497C58.1971 9.5883 57.9295 9.16664 57.7388 8.68997C57.5555 8.20597 57.4638 7.6963 57.4638 7.16097C57.4638 6.62564 57.5591 6.11964 57.7498 5.64297C57.9405 5.15897 58.2081 4.73363 58.5528 4.36697C58.8975 4.0003 59.3118 3.71063 59.7958 3.49797C60.2798 3.27797 60.8151 3.16797 61.4018 3.16797C61.9885 3.16797 62.5201 3.2743 62.9968 3.48697C63.4808 3.69964 63.8951 3.9893 64.2398 4.35597C64.5845 4.7153 64.8485 5.13697 65.0318 5.62097ZM64.1848 8.40397C64.3388 8.0153 64.4158 7.60097 64.4158 7.16097C64.4158 6.72097 64.3388 6.30664 64.1848 5.91797C64.0381 5.5293 63.8291 5.19197 63.5578 4.90597C63.2865 4.61997 62.9638 4.39263 62.5898 4.22397C62.2231 4.0553 61.8198 3.97097 61.3798 3.97097C60.9398 3.97097 60.5328 4.0553 60.1588 4.22397C59.7921 4.3853 59.4768 4.60897 59.2128 4.89497C58.9488 5.18097 58.7398 5.5183 58.5858 5.90697C58.4391 6.2883 58.3658 6.69897 58.3658 7.13897C58.3658 7.57897 58.4391 7.9933 58.5858 8.38197C58.7398 8.77064 58.9525 9.10797 59.2238 9.39397C59.4951 9.67997 59.8141 9.9073 60.1808 10.076C60.5548 10.2446 60.9618 10.329 61.4018 10.329C61.8418 10.329 62.2451 10.2483 62.6118 10.087C62.9858 9.9183 63.3048 9.69097 63.5688 9.40497C63.8328 9.11897 64.0381 8.7853 64.1848 8.40397Z"
+            fill="white" />
+          <path d="M72.6835 3.29997H67.1505V11H68.0195V7.64497H72.1885V6.85297H68.0195V4.10297H72.6835V3.29997Z"
+            fill="white" />
+          <path d="M79.8692 4.10297H77.2842V11H76.4043V4.10297H73.8192V3.29997H79.8692V4.10297Z" fill="white" />
+          <path
+            d="M84.0541 9.71297L81.8541 3.29997H80.9081L83.6581 11.055H84.3841L86.5071 4.80697L88.6191 11.055H89.3561L92.1061 3.29997H91.1931L88.9931 9.71297L86.8811 3.27797H86.1661L84.0541 9.71297Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M95.5444 3.24497H96.3584L99.8674 11H98.9324L98.0304 8.96497H93.8394L92.9264 11H92.0354L95.5444 3.24497ZM94.1804 8.18397H97.6894L95.9404 4.25697L94.1804 8.18397Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M107.755 11L105.39 7.85397C105.691 7.80264 105.969 7.71464 106.226 7.58997C106.483 7.4653 106.703 7.3113 106.886 7.12797C107.077 6.9373 107.223 6.7173 107.326 6.46797C107.429 6.2113 107.48 5.92164 107.48 5.59897C107.48 5.2543 107.414 4.94264 107.282 4.66397C107.15 4.37797 106.963 4.13597 106.721 3.93797C106.479 3.73264 106.186 3.57497 105.841 3.46497C105.504 3.35497 105.122 3.29997 104.697 3.29997H101.386V11H102.255V8.00797H104.455L106.688 11H107.755ZM106.6 5.63197C106.6 5.8813 106.549 6.10497 106.446 6.30297C106.351 6.50097 106.215 6.66964 106.039 6.80897C105.863 6.94097 105.654 7.04364 105.412 7.11697C105.17 7.1903 104.906 7.22697 104.62 7.22697H102.255V4.10297H104.631C105.254 4.10297 105.738 4.23864 106.083 4.50997C106.428 4.77397 106.6 5.14797 106.6 5.63197Z"
+            fill="white" />
+          <path
+            d="M109.335 3.29997H114.901V4.09197H110.204V6.72097H114.406V7.51297H110.204V10.208H114.956V11H109.335V3.29997Z"
+            fill="white" />
+        </svg>
+
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-3 mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">IronPDF</a></li>
+              <li><a class="dropdown-item" href="#">IronOCR</a></li>
+              <li><a class="dropdown-item" href="#">IronXL</a></li>
+              <li><a class="dropdown-item" href="#">IronBarcode</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Career</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero – IronPDF for C++ Beta">
+
+    <!-- decorative diagonal ribbons (visual only) -->
+    <div class="hero-ribbons" aria-hidden="true">
+      <div class="ribbon ribbon-dark"></div>
+      <div class="ribbon ribbon-teal"></div>
+      <div class="ribbon ribbon-pink"></div>
+      <div class="ribbon ribbon-gold"></div>
+    </div>
+
+    <!-- .CPP icon -->
+    <div class="cpp-icon-wrap" aria-hidden="true">
+      <svg width="780" height="698" viewBox="0 0 780 698" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M164.002 353.076H338.315V142.582L302.838 107H164.002V353.076Z"
+          fill="url(#paint0_linear_1_2858)" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M302.889 142.529L320.555 124.78L338.315 142.529V178.117L302.889 142.529Z" fill="black"
+          fill-opacity="0.1" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M338.313 142.558H302.887V107L338.313 142.558Z"
+          fill="#0080CD" />
+        <g clip-path="url(#clip0_1_2858)">
+          <path
+            d="M302 178.109C302 175.298 300.012 171.85 297.583 170.445L255.417 146.054C252.988 144.649 249.012 144.649 246.583 146.054L204.417 170.445C201.987 171.85 200 175.299 200 178.109V226.891C200 229.701 201.988 233.15 204.417 234.555L246.583 258.946C249.012 260.351 252.988 260.351 255.417 258.946L297.583 234.555C298.798 233.852 299.902 232.639 300.702 231.25C301.503 229.861 302 228.296 302 226.891V178.109Z"
+            fill="#0080CD" />
+          <path
+            d="M255.416 258.946L297.583 234.555C298.797 233.852 299.901 232.639 300.702 231.25L250.999 202.5L201.297 231.25C202.097 232.639 203.202 233.853 204.416 234.555L246.583 258.946C249.012 260.351 252.987 260.351 255.416 258.946Z"
+            fill="#00549E" />
+          <path
+            d="M251 236.564C232.252 236.564 217 221.283 217 202.5C217 183.717 232.252 168.436 251 168.436C263.097 168.436 274.38 174.958 280.444 185.457L265.729 193.988C262.694 188.733 257.05 185.468 251 185.468C241.626 185.468 234 193.108 234 202.5C234 211.891 241.626 219.532 251 219.532C257.051 219.532 262.695 216.267 265.73 211.011L280.445 219.541C274.381 230.042 263.098 236.564 251 236.564Z"
+            fill="white" />
+          <path
+            d="M284.999 200.608H281.221V196.823H277.444V200.608H273.666V204.392H277.444V208.177H281.221V204.392H284.999V200.608Z"
+            fill="white" />
+          <path
+            d="M299.167 200.608H295.389V196.823H291.612V200.608H287.834V204.392H291.612V208.177H295.389V204.392H299.167V200.608Z"
+            fill="white" />
+        </g>
+        <mask id="mask0_1_2858" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="30" y="-52" width="805"
+          height="710">
+          <path
+            d="M522.239 -52L483.785 20.0306L396.654 13.1596L450.563 82.0982L415.029 148.518L323.639 7.43376L353.819 -41.6936L522.239 -52Z"
+            fill="#89D3DF" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M834.866 331.401L834.865 331.401L762.216 481.301L702.831 405.148L739.458 357.282L678.372 373.772L702.831 405.148L762.216 481.301L637.117 491.379L578.462 400.797L346.032 463.781L255.86 656.51L142.565 657.999L142.564 658L30 549.324L74.0522 412.02L294.8 373.428L294.802 373.427L483.788 20.0304L522.242 -52L551.205 25.2982L496.807 141.418L632.128 314.566L632.129 314.567L793.492 286.51L834.865 331.4L834.866 331.401ZM151.691 516.344L229.573 495.273L190.39 568.562L190.389 568.563L151.691 516.344ZM460.665 218.945L396.657 355.677L533.68 331.743H533.923L460.665 218.945Z"
+            fill="#89D3DF" />
+        </mask>
+        <g mask="url(#mask0_1_2858)">
+          <g filter="url(#filter0_d_1_2858)">
+            <path d="M739.459 357.28L702.83 405.148L762.215 481.301L834.865 331.4L739.459 357.28Z" fill="#258B74" />
+            <path d="M396.653 13.1599L323.639 7.43408L415.029 148.518L450.562 82.0985L396.653 13.1599Z"
+              fill="#63C1A0" />
+            <path
+              d="M762.217 481.302L702.831 405.148L678.371 373.771L632.129 314.566L631.885 314.681L632.129 314.566L496.808 141.418L460.666 218.945L533.924 331.744H533.681L578.463 400.797L637.118 491.379L669.975 448.321L637.118 491.379L762.217 481.302Z"
+              fill="#63C1A0" />
+            <path d="M151.691 516.344L30 549.324L142.564 658L190.389 568.563L151.691 516.344Z" fill="#331433" />
+            <path
+              d="M396.655 355.679L294.8 373.429L74.0522 412.021L30 549.325L151.691 516.345L229.573 495.274L346.032 463.782L578.462 400.798L533.679 331.745L396.655 355.679Z"
+              fill="#E01A59" />
+            <path d="M793.491 286.51L632.129 314.567L678.372 373.772L739.46 357.281L834.866 331.401L793.491 286.51Z"
+              fill="#E01A59" />
+            <path
+              d="M551.206 25.299L483.789 20.0312L450.567 82.0989L415.034 148.518L294.803 373.428L396.658 355.678L460.668 218.946L496.81 141.418L551.206 25.299Z"
+              fill="#ECB32D" />
+            <path
+              d="M229.576 495.272L190.391 568.563L209.618 594.443L190.391 568.563L142.566 658L255.861 656.511L346.034 463.781L229.576 495.272Z"
+              fill="#ECB32D" />
+            <path d="M483.786 20.0306L522.241 -52L353.82 -41.6936L396.656 13.1596L483.786 20.0306Z" fill="#89D3DF" />
+            <path d="M353.818 -41.6934L323.639 7.43401L396.653 13.1598L353.818 -41.6934Z" fill="#89D3DF" />
+            <path d="M551.204 25.2983L522.242 -52L483.787 20.0306L551.204 25.2983Z" fill="#89D3DF" />
+          </g>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M30 0H780V658H30V0Z" fill="url(#paint1_linear_1_2858)" />
+        </g>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M230 271H359V326H230V271Z" fill="#00549E" />
+        <path d="M245.291 313.885H253.893V305.313H245.291V313.885Z" fill="white" />
+        <path
+          d="M271.924 314.5C278.649 314.5 282.491 311.555 285.417 307.555L279.042 302.984C277.164 305.225 275.33 306.72 272.142 306.72C267.863 306.72 264.85 303.115 264.85 298.5V298.412C264.85 293.929 267.863 290.236 272.142 290.236C275.112 290.236 277.077 291.687 278.823 293.841L285.198 288.874C282.535 285.137 278.43 282.5 272.23 282.5C262.973 282.5 256.161 289.533 256.161 298.5V298.588C256.161 307.775 263.191 314.5 271.924 314.5Z"
+          fill="white" />
+        <path
+          d="M289.104 313.885H297.575V305.093H301.811C309.365 305.093 314.91 301.269 314.91 293.973V293.885C314.91 287.071 309.933 283.115 302.247 283.115H289.104V313.885ZM297.575 298.412V290.28H301.592C304.605 290.28 306.483 291.643 306.483 294.28V294.368C306.483 296.83 304.605 298.412 301.636 298.412H297.575Z"
+          fill="white" />
+        <path
+          d="M318.485 313.885H326.956V305.093H331.191C338.745 305.093 344.291 301.269 344.291 293.973V293.885C344.291 287.071 339.313 283.115 331.628 283.115H318.485V313.885ZM326.956 298.412V290.28H330.973C333.986 290.28 335.864 291.643 335.864 294.28V294.368C335.864 296.83 333.986 298.412 331.017 298.412H326.956Z"
+          fill="white" />
+        <defs>
+          <filter id="filter0_d_1_2858" x="0" y="-72" width="864.866" height="770" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha" />
+            <feOffset dy="10" />
+            <feGaussianBlur stdDeviation="15" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0941176 0 0 0 0 0.0941176 0 0 0 0 0.0941176 0 0 0 0.2 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2858" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2858" result="shape" />
+          </filter>
+          <linearGradient id="paint0_linear_1_2858" x1="178.072" y1="194.939" x2="360.986" y2="309.009"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0080CD" stop-opacity="0.46" />
+            <stop offset="1" stop-color="#470A3F" stop-opacity="0.6" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_1_2858" x1="701.107" y1="77.5535" x2="-44.2981" y2="452.596"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0.145833" stop-color="#240E25" stop-opacity="0.89" />
+            <stop offset="1" stop-color="#240E25" stop-opacity="0" />
+          </linearGradient>
+          <clipPath id="clip0_1_2858">
+            <rect width="102" height="115" fill="white" transform="translate(200 145)" />
+          </clipPath>
+        </defs>
+      </svg>
+
+    </div>
+
+    <div class="container px-4">
+      <div class="row">
+        <div class="col-lg-7 col-md-8">
+          <div class="hero-content">
+
+            <!-- brand label -->
+            <div class="hero-product-label">
+              <svg width="166" height="40" viewBox="0 0 166 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M52.6885 11.1744H56.4455V28.2537H52.6885V11.1109V11.1744ZM60.676 11.1744H68.4741C70.6209 11.1744 72.2626 11.7458 73.4308 12.8887C73.9221 13.414 74.3038 14.033 74.5532 14.7091C74.8027 15.3852 74.9148 16.1047 74.8831 16.8252V16.8569C74.8831 18.2537 74.5673 19.3966 73.8728 20.2537C73.1914 21.1203 72.2843 21.7797 71.2524 22.1585L75.3882 28.2855H71.0314L67.3691 22.7934H64.4645V28.2855H60.7391V11.1109L60.676 11.1744ZM68.2531 19.4601C69.1687 19.4601 69.8632 19.2696 70.3684 18.8252C70.614 18.6024 70.8068 18.327 70.9324 18.0193C71.0581 17.7116 71.1135 17.3795 71.0945 17.0474V17.0156C71.0945 16.1902 70.8419 15.5871 70.3368 15.1744C69.8001 14.7617 69.0739 14.5394 68.1584 14.5394H64.433V19.4601H68.2215H68.2531ZM86.5644 28.5712C84.1462 28.5987 81.8127 27.6761 80.0607 25.9998C79.2371 25.1928 78.5877 24.2238 78.1531 23.1533C77.7186 22.0827 77.5082 20.9335 77.535 19.7775V19.6823C77.5136 17.9297 78.0211 16.2118 78.9905 14.7552C79.96 13.2987 81.3459 12.1719 82.9653 11.5236C84.0703 11.0791 85.27 10.8252 86.596 10.8252C89.0078 10.8144 91.329 11.7481 93.0681 13.4283C93.8917 14.2353 94.5411 15.2043 94.9757 16.2748C95.4102 17.3454 95.6207 18.4946 95.5938 19.6506V19.6823C95.6153 21.4349 95.1078 23.1528 94.1383 24.6094C93.1688 26.0659 91.7829 27.1927 90.1635 27.841C89.0234 28.3205 87.8002 28.5687 86.5644 28.5712ZM86.5644 25.0791C87.2533 25.0886 87.9368 24.9554 88.5723 24.6878C89.2078 24.4202 89.7817 24.0239 90.2582 23.5236C91.1926 22.5047 91.7013 21.1633 91.679 19.7775V19.6823C91.7092 18.2703 91.1878 16.9026 90.2267 15.8728C89.7505 15.3697 89.1774 14.9696 88.5423 14.6967C87.9072 14.4237 87.2235 14.2838 86.5328 14.2855C85.8472 14.2863 85.169 14.4275 84.5393 14.7003C83.9097 14.9732 83.3419 15.3721 82.8706 15.8728C81.9171 16.8947 81.3963 18.2495 81.4183 19.6506V19.6823C81.4167 21.0891 81.9342 22.4465 82.8706 23.4918C83.3441 23.968 83.8809 24.349 84.5123 24.6347C85.1437 24.9521 85.8383 25.0791 86.596 25.0791H86.5644ZM98.9403 11.1744H102.413L110.369 21.7141V11.1744H114.031V28.2537H110.874L102.603 17.3648V28.2537H98.9088V11.1109L98.9403 11.1744Z"
+                  fill="white" />
+                <path
+                  d="M117.915 11.1747H124.292C125.24 11.1747 126.124 11.3017 126.913 11.5557C127.702 11.8096 128.365 12.1588 128.933 12.6033C129.49 13.1066 129.933 13.724 130.233 14.414C130.532 15.104 130.681 15.8505 130.67 16.6033V16.635C130.67 17.5874 130.48 18.381 130.133 19.0795C129.786 19.7779 129.281 20.3493 128.681 20.8255C128.047 21.3052 127.33 21.6606 126.566 21.8731C125.745 22.1271 124.892 22.2223 123.977 22.2223H119.872V28.2541H117.915V11.2064V11.1747ZM124.071 20.508C124.766 20.508 125.397 20.4128 125.966 20.2223C126.504 20.0652 127.007 19.8067 127.45 19.4604C127.853 19.132 128.176 18.7153 128.395 18.2422C128.614 17.7691 128.722 17.252 128.712 16.7303V16.6668C128.712 15.4604 128.334 14.508 127.481 13.9049C126.629 13.3017 125.524 12.9525 124.166 12.9525H119.841V20.508H124.071ZM134.174 11.1747H140.078C141.404 11.1747 142.604 11.3652 143.74 11.8096C144.845 12.2541 145.792 12.8572 146.582 13.6191C147.402 14.3887 148.051 15.3239 148.486 16.3634C148.921 17.4029 149.133 18.5233 149.107 19.6509V19.7144C149.124 20.8674 148.909 22.0119 148.476 23.0795C148.043 24.1135 147.397 25.0438 146.582 25.8096C145.759 26.5907 144.794 27.2051 143.74 27.6191C142.604 28.0636 141.404 28.2541 140.078 28.2541H134.174V11.2064V11.1747ZM140.078 26.4763C141.151 26.4763 142.099 26.3176 142.983 25.9683C143.801 25.6634 144.547 25.1895 145.172 24.5771C145.798 23.9648 146.289 23.2275 146.613 22.4128C146.949 21.5756 147.121 20.6808 147.118 19.7779V19.6826C147.118 18.7303 146.961 17.8731 146.613 17.0477C146.287 16.2263 145.797 15.481 145.172 14.8584C144.548 14.2358 143.802 13.7491 142.983 13.4287C142.055 13.0759 141.069 12.9036 140.078 12.9207H136.069V26.4445H140.078V26.4763ZM153.18 11.1747H165.398V12.9525H155.106V19.0477H164.325V20.7937H155.074V28.2541H153.18V11.1112V11.1747Z"
+                  fill="#E01A59" />
+                <path d="M47.2931 9.11133L45.462 15.9367H29.2344L31.0655 9.11133H47.2931Z" fill="#FDA509" />
+                <path d="M18.0272 24.0321L16.2276 30.794H0L1.83113 24.0004L18.0272 24.0321Z" fill="#63C1A0" />
+                <path d="M36.2748 15.9365H29.2344L33.4965 0H40.5053L36.2748 15.9365Z" fill="#89D3DF" />
+                <path d="M13.8008 40H6.79199L11.0225 24.0317H18.0314L13.8008 40Z" fill="#E01A59" />
+                <path d="M22.0057 9.11133L20.1746 15.9367H3.97852L5.77808 9.11133H22.0057Z" fill="#FDA509" />
+                <path d="M20.1709 15.9365H13.1621L17.4242 0H24.4646L20.1709 15.9365Z" fill="#E01A59" />
+                <path d="M29.833 40H22.8242L27.0548 24.0317H34.0952L29.833 40Z" fill="#89D3DF" />
+                <path d="M43.3221 24.0315L41.5225 30.7934H25.2949L27.0629 23.9998L43.3221 24.0315Z" fill="#63C1A0" />
+                <path d="M32.2706 30.7939H9.22363L15.0012 9.11133H38.0797L32.2706 30.7939Z" fill="#331433" />
+                <path
+                  d="M20.3664 19.062V19.0452C20.3664 18.7429 20.3135 18.4686 20.2078 18.2223C20.1076 17.9704 19.96 17.7549 19.7652 17.5758C19.5759 17.3966 19.3421 17.2595 19.0637 17.1643C18.791 17.0636 18.4792 17.0132 18.1285 17.0132H15.7402V22.8909H17.0262V21.1276H18.0032C18.3317 21.1276 18.6379 21.0856 18.9218 21.0016C19.2113 20.9121 19.4618 20.7805 19.6733 20.607C19.8904 20.4335 20.0602 20.2179 20.1827 19.9604C20.3052 19.7029 20.3664 19.4035 20.3664 19.062ZM19.0637 19.0872C19.0637 19.3391 18.9747 19.5518 18.7965 19.7253C18.6184 19.8933 18.3679 19.9772 18.045 19.9772H17.0262V18.1803H18.0199C18.3428 18.1803 18.5961 18.2559 18.7798 18.407C18.9691 18.5582 19.0637 18.7793 19.0637 19.0704V19.0872Z"
+                  fill="white" />
+                <path
+                  d="M26.7042 19.952V19.9353C26.7042 19.521 26.629 19.1376 26.4787 18.7849C26.3284 18.4266 26.1141 18.116 25.8357 17.8529C25.563 17.5898 25.2345 17.3854 24.8504 17.2399C24.4718 17.0888 24.0543 17.0132 23.5978 17.0132H21.3181V22.8909H23.5978C24.0543 22.8909 24.4718 22.8153 24.8504 22.6642C25.2345 22.5131 25.563 22.3059 25.8357 22.0428C26.1141 21.7797 26.3284 21.4691 26.4787 21.1108C26.629 20.7525 26.7042 20.3663 26.7042 19.952ZM25.3598 19.9688C25.3598 20.2319 25.3152 20.4698 25.2262 20.6826C25.1427 20.8953 25.023 21.08 24.8671 21.2367C24.7168 21.3935 24.5331 21.5138 24.316 21.5978C24.0988 21.6818 23.8595 21.7238 23.5978 21.7238H22.6041V18.1803H23.5978C23.8595 18.1803 24.0988 18.2251 24.316 18.3147C24.5331 18.3986 24.7168 18.519 24.8671 18.6757C25.023 18.8325 25.1427 19.02 25.2262 19.2383C25.3152 19.4566 25.3598 19.6945 25.3598 19.952V19.9688Z"
+                  fill="white" />
+                <path
+                  d="M32.3009 18.1887V17.0132H27.8501V22.8909H29.1361V20.6154H31.9252V19.4398H29.1361V18.1887H32.3009Z"
+                  fill="white" />
+              </svg>
+
+              <span class="label-suffix">for C++</span>
+            </div>
+
+            <p class="hero-eyebrow">Building on the success of IronPDF for .NET</p>
+
+            <h1 class="hero-title">Beta Software Program</h1>
+            <h2 class="hero-subtitle">IronPDF for C++</h2>
+
+            <p class="hero-coming-soon">Coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────── -->
+  <section class="cta-section" aria-label="Early access sign up">
+    <div class="container px-4">
+      <div class="row">
+        <div class="col-lg-8">
+
+          <h2 class="cta-heading">Be one of the first</h2>
+          <p class="cta-subheading">Sign up NOW to get early access!</p>
+
+          <form class="signup-form" action="#" method="post" novalidate aria-label="Early access sign up form">
+            <label for="emailInput" class="visually-hidden">Enter your email address</label>
+            <input type="email" id="emailInput" name="email" placeholder="Enter email adress" autocomplete="email"
+              aria-required="true" />
+            <button type="submit" aria-label="Sign up now for early access">
+              Sign up now <span class="arrow" aria-hidden="true">›</span>
+            </button>
+          </form>
+
+          <div class="badge-row" aria-label="Also coming soon for other platforms">
+            <span class="badge-soon"># Coming Soon</span>
+            <span class="badge-post-label">
+              IronPDF Beta Program also coming soon for
+              <span class="lang">Python</span><span class="sep"> | </span><span class="lang">Node.JS</span><span
+                class="sep"> | </span><span class="lang">Java</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
