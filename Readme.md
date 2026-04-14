@@ -1,5 +1,6 @@
 # Iron Software Coding Assignment
 Project by: Ronan Dsouza
+Github link: ```https://github.com/therawnaan/iron-software```
 
 ## Project Description:
 The project is a CodeIgniter Project of a product titled __IronPDF for C++__. It's a coding assignment which was assigned in regards to a job application. The purpose of the project was to convert a Figma file into a working website based on a CodeIgniter Template. 
@@ -13,6 +14,8 @@ The project is a CodeIgniter Project of a product titled __IronPDF for C++__. It
 To build the project, I used VScode to code the project with Git to manage versioning. I also used GenAI to derive boilerplate code for the project to speed up the development process. All the AI generated were double checked by me before commiting to `main`.
 
 ## Setup Instructions:
+
+__Information__: I have placed the entire project inside the ironsoft folder which is the project rootfolder. All the files placed here are for the rest of the evaluation (readme file and QA checklist file). Please note to open the terminal inside the ironsoft folder. 
 
 __Step 1:__  
 Install the dependencies (Can take some time, depending on internet speed and your system's processing speed) by running the following in the terminal opened in the project root folder.  
